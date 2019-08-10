@@ -1,0 +1,190 @@
+* {
+    font-family: 'メイリオ', Meiryo,'Meiryo UI','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+    -ms-user-select: none;
+    /* IE 10+ */
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    outline: none;
+}
+
+body {
+    background: #eee;
+    overflow: hidden;
+}
+
+/*共通設定*/
+input[type="text"],
+textarea {
+    border: 1px solid #aaa;
+    background: #fff;
+    color: #000;
+    transition-duration: 0.2s;
+    -ms-user-select: auto;
+    -moz-user-select: auto;
+    -khtml-user-select: auto;
+    -webkit-user-select: auto;
+    user-select: auto;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border: 1px solid #0088b5;
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 5px #0088b5 inset;
+    transition-duration: 0.2s;
+}
+
+button {
+    border: none;
+    background: #0088b5;
+    color: #fff;
+}
+
+button:hover {
+    background: #04ace3;
+}
+
+button:active {
+    background: #00739a;
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #4aa8c7;
+    color: #fff;
+    font-size: 1.5em;
+    z-index: 1;
+}
+#header #toolbox{
+    position: absolute;
+    right:3px;
+    top:0;
+}
+#header button{
+    height:40px;
+    font-size:14pt;
+    border-radius:5px;
+    color:#fff;
+    margin-right: 3px;
+}
+#contents {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 40px);
+}
+
+#contents > div {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.4s;
+    transition-delay: 0s;
+    transform: scale(0.2);
+}
+
+#contents > div.show {
+    left:0;
+    top:0;
+    transition-duration: 0.4s;
+    transition-delay: 0.1s;
+    transform: scale(1);
+    
+}
+
+#menu {
+    text-align: center;
+}
+
+#menu button {
+    width: 49%;
+    height: 100px;
+    margin-top: 50px;
+    font-size: 12pt;
+}
+
+#menu button i {
+    font-size: 32pt;
+}
+
+#editor #csvEditor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 5px);
+    height: calc(100% - 50px);
+    resize: none;
+    font-size:11pt;
+}
+
+#editor #easyAdd {
+    position: absolute;
+    top: calc(100% - 40px);
+    left: 0;
+    width: 100%;
+    height: 40px;
+}
+
+#easyAdd input {
+    width: calc((100% - 85px) / 2);
+    height: 25px;
+    font-size: 11pt;
+}
+
+#easyAdd button {
+    width: 70px;
+    height: 35px;
+}
+
+#learn #questionText {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#learn #answerText{
+    font-size:1rem;
+}
+
+#learn #clickArea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+}
+
+#learn #learnHelp{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:30px;
+    text-align: center;
+    color:#fff;
+    font-size:11pt;
+    padding-top:20px;
+    background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.6));
+    opacity: 0;
+    transition-delay: 0.5s;
+    transition-duration: 0.2s;
+}
+#learn.show > #learnHelp{
+    opacity:1;
+}
+
+@media screen and (max-width:480px){
+    .showSmallInSM{
+        font-size:16pt;
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>HippoCampus</title>
+    <link rel="stylesheet" href="component/hippocampus.main.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script src="component/papaparse.min.js"> </script>
+    <script src="component/lz-string.min.js"></script>
+    <script src="component/encoding.min.js"></script>
+    <script src="component/hippocampus.main.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <i class="fas fa-brain"></i> <span class="showSmallInSM">HippoCampus</span>
+        <div id="toolbox">
+            <span id="editorOnly">
+            <button id="openFileintoEditor" title="CSVファイルを開く"><i class="fas fa-file-csv"></i></button>
+            <input type="file" id="openFileintoEditorInput" accept=".csv" hidden>
+            <button id="shareButton" title="編集中のCSVを共有"><i class="fas fa-share-alt"></i></button>
+            </span>
+            <button id="homeButton" title="メニュー画面に戻る"><i class="fas fa-home"></i></button></div></div>
+    <div id="contents">
+        <div id="menu">
+            <button id="createNew"><i class="far fa-plus-square"></i><br>新しい問題を作成</button>
+            <button id="openFile"><i class="fas fa-file-csv"></i><br>CSVファイルを開く</button>
+            <input type="file" id="openFileInput" accept=".csv" hidden>
+        </div>
+        <div id="editor">
+            <textarea id="csvEditor"></textarea>
+            <div id="easyAdd">
+                <input type="text" placeholder="問題を入力..." id="eaQuestion"><input type="text" placeholder="答えを入力..." id="eaAnswer"><button id="addQA">追加</button>
+            </div>
+        </div>
+        <div id="learn">
+            <div id="QandAForm">
+                <span id="questionText"></span><br><span id="answerText"></span>
+            </div>
+            <div id="learnHelp">画面タップorクリックで次の問題へ</div>
+            <div id="clickArea"></div>
+        </div>
+    </div>
+</body>
+
+</html>
