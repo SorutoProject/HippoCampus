@@ -1,5 +1,13 @@
 * {
     font-family: 'メイリオ', Meiryo,'Meiryo UI','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+}
+
+body {
+    background: #eee;
+    overflow: hidden;
+}
+
+#header,#learn,#menu{
     -ms-user-select: none;
     /* IE 10+ */
     -moz-user-select: -moz-none;
@@ -9,11 +17,6 @@
     outline: none;
 }
 
-body {
-    background: #eee;
-    overflow: hidden;
-}
-
 /*共通設定*/
 input[type="text"],
 textarea {
@@ -21,11 +24,6 @@ textarea {
     background: #fff;
     color: #000;
     transition-duration: 0.2s;
-    -ms-user-select: auto;
-    -moz-user-select: auto;
-    -khtml-user-select: auto;
-    -webkit-user-select: auto;
-    user-select: auto;
 }
 
 input[type="text"]:focus,
