@@ -122,7 +122,7 @@ let hca = {
         //知ってるときの処理
         "know": function () {
             if ($$("#answerText").style.display !== "none") {
-                if (docData.data.length <= nowQNum + 1) {
+                if (docData.data.length <= nowQNum) {
                     var replay = confirm("CSVファイル内の問題の個数分だけ問題を表示しました。\nもう一度最初から始めますか？");
                     if (replay) hca.learn.replay();
                     else hca.switchMode("menu");
@@ -206,7 +206,11 @@ window.onload = function () {
 
     $$("#addQA").addEventListener("click", function () {
         if ($$("#questionText").value !== "" && $$("#answerText").value !== "") {
-            $$("#csvEditor").value += $$("#eaQuestion").value + "," + $$("#eaAnswer").value + "\n";
+            if($$("#eaQuestion").value.indexOf(",") !== -1) var question = '"' + $$("#eaQuestion").value + '"';
+            else var question = $$("#eaQuestion").value;
+            if($$("#eaAnswer").value.indexOf(",") !== -1) var answer = '"' + $$("#eaAnswer").value + '"';
+            else var answer = $$("#eaAnswer").value;
+            $$("#csvEditor").value += question + "," + answer + "\n";
             $$("#eaQuestion").value = $$("#eaAnswer").value = "";
             $$("#eaQuestion").focus();
         } else {
